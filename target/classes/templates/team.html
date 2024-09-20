@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+	<link href="../CSS/style.css" rel="stylesheet">
+	<style>
+		.navbar {
+			background-color: #b3cccc;
+		}
+
+		body {
+			/* background-image: url(bg17.png); */
+
+		}
+
+		table {
+
+			border-color: white;
+		}
+
+		.img_box {
+			border: solid rgb(255, 255, 255);
+			border-width: 4px;
+			padding: 5px;
+			box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		.main_div {
+			border-top: solid;
+			border-top-color: rgb(26, 190, 26);
+			box-shadow: 1px 1px 1px 1px rgb(228, 223, 223);
+		}
+
+		.nav-item:hover {
+			font-weight: bolder;
+		}
+
+		/*teams css */
+		body {
+			/* Background-image: url(https://cdnb.artstation.com/p/assets/images/images/003/704/285/large/dusica-neskovic-muzejdanfinal.jpg?1476637309); */
+		}
+
+		::selection {
+			background-color: #1caa17;
+			color: white;
+			text-shadow: BLACK;
+		}
+
+		/* Base styles */
+		section {
+			padding: 60px 0;
+		}
+
+		a,
+		a:hover,
+		a:focus,
+		a:active {
+			text-decoration: none;
+			outline: none;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.site-heading h2 {
+			display: block;
+			font-weight: 700;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+		}
+
+		.site-heading h2 span {
+			color: #229e1d;
+		}
+
+		.site-heading h4 {
+			display: inline-block;
+			padding-bottom: 20px;
+			position: relative;
+			text-transform: capitalize;
+			z-index: 1;
+		}
+
+		.site-heading h4::before {
+			background: rgb(7, 230, 7);
+			bottom: 0;
+			content: "";
+			height: 2px;
+			left: 50%;
+			margin-left: -25px;
+			position: absolute;
+			width: 50px;
+		}
+
+		.site-heading {
+			margin-bottom: 60px;
+			overflow: hidden;
+			margin-top: -5px;
+		}
+
+		.team-area .single-item {
+			margin-bottom: 30px;
+		}
+
+		.team-area .item .thumb {
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+		}
+
+		.team-area .item .thumb::after {
+			background: #232323;
+			content: "";
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			transition: all 0.35s ease-in-out;
+			width: 100%;
+		}
+
+		.team-area .team-items .item:hover .thumb::after {
+			opacity: 0.7;
+		}
+
+		.team-area .item .thumb .overlay {
+			top: -100%;
+			left: 0;
+			padding: 20px;
+			position: absolute;
+			text-align: center;
+			transition: all 0.35s ease-in-out;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.team-area .item:hover .thumb .overlay {
+			top: 50%;
+			transform: translate(-50%, -50%);
+			left: 50%;
+		}
+
+		.team-area .item .thumb .overlay p,
+		.team-area .item .thumb .overlay h4 {
+			color: #ffffff;
+		}
+
+		.team-area .item .thumb img {
+			transition: all 0.35s ease-in-out;
+		}
+
+		.team-area .item:hover .thumb img {
+			opacity: 0.6;
+		}
+
+		.team-area .item .thumb .social li {
+			display: inline-block;
+		}
+
+		.team-area .item .thumb .social li a {
+			border-radius: 50%;
+			color: #ffffff;
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			margin: 0 2px;
+			text-align: center;
+			width: 40px;
+		}
+
+		.team-area .info {
+			background: #ffffff;
+			box-shadow: 0 0 10px #cccccc;
+			padding: 40px 20px 20px;
+			position: relative;
+			text-align: center;
+			z-index: 9;
+		}
+
+		.team-area .info .message {
+			height: 50px;
+			line-height: 40px;
+			margin-left: -25px;
+			margin-top: -25px;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: 50px;
+		}
+
+		.team-area .info .message a {
+			background: #fff;
+			border-radius: 50%;
+			box-shadow: 0 0 10px #cccccc;
+			color: #1caa17;
+			display: inline-block;
+			font-size: 20px;
+			height: 50px;
+			line-height: 50px;
+			width: 50px;
+		}
+
+		.team-area .info h4 {
+			font-weight: 600;
+			margin-bottom: 5px;
+			text-transform: capitalize;
+		}
+
+		.team-area .info span {
+			color: #288b0f;
+			font-family: "Poppins", sans-serif;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		.team-area .social li.twitter a {
+			background-color: #00b6f1;
+		}
+
+		.team-area .social li.pinterest a {
+			background-color: #3a37da;
+		}
+
+		.team-area .social li.facebook a {
+			background-color: #3b5998;
+		}
+
+		.team-area .social li.google-plus a {
+			background-color: #df4a32;
+		}
+
+		.team-area .social li.vimeo a {
+			background-color: #1ab7ea;
+		}
+
+		.team-area .social li.instagram a {
+			background-color: #cd486b;
+		}
+
+		/* Responsive styles */
+		@media (max-width: 992px) {
+			.team-area .single-item {
+				margin-bottom: 20px;
+			}
+
+			.team-area .info {
+				padding: 30px 15px 15px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.team-area .single-item {
+				margin-bottom: 15px;
+			}
+
+			.team-area .info {
+				padding: 25px 10px 10px;
+			}
+		}
+
+		@media (max-width: 576px) {
+			.team-area .single-item {
+				margin-bottom: 10px;
+			}
+
+			.team-area .info {
+				padding: 20px 5px 5px;
+			}
+
+			.team-area .item {
+				margin-bottom: 20px;
+			}
+
+			.team-area .item .thumb img {
+				width: 100%;
+				height: auto;
+			}
+
+			.team-area .item .thumb .overlay {
+				padding: 10px;
+			}
+		}
+	</style>
+
+	<title>Home Page</title>
+</head>
+
+<body>
+
+	<div class="container-fluid p-3 bg-success text-white text-center banar" style="margin: 0;">
+		<div class="row">
+			<div class="col-sm-1">
+				<img src="../IMG/logo-removebg-preview.png" class="container-logo " alt="logo" height="150px"
+					width="150px">
+			</div>
+			<div class="col-sm-11" style="margin-top:28px ;">
+				<h1 class="archivo-black-regular"> Smart Village Management System</h1>
+				<p>A Initiative for make a Village Smart by team "Error 4 ARMS"</p>
+			</div>
+		</div>
+
+	</div>
+	<nav class="navbar navbar-expand-lg sticky-top">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item me-5 ms-5">
+						<a class="nav-link" href="../index.html"><b>Home</b></a>
+					</li>
+					<li class="nav-item dropdown me-5">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>About
+								Us</b></a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="../HTML/About.html"><b>About SMVS</b></a></li>
+							<li><a class="dropdown-item" href="../HTML/Vision_Mission.html"><b>Vission and Mission
+									</b></a></li>
+							<li><a class="dropdown-item" href="../HTML/team.html"><b>Our Teams</b></a></li>
+							<li><a class="dropdown-item" href="../HTML/join_us.html"><b>How to join us </b></a></li>
+							<li><a class="dropdown-item" href="../HTML/features.html"><b>Silent Freatures</b></a></li>
+
+						</ul>
+					</li>
+
+					<li class="nav-item me-5 ">
+						<a class="nav-link" href="Volunteer_login.html"><b>Volunteer</b></a>
+					</li>
+					<li class="nav-item me-5 ">
+						<a class="nav-link" href="#login"><b>User</b></a>
+					</li>
+					<li class="nav-item me-5">
+						<a class="nav-link" href="contact.html"><b>Contact</b></a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#"><b>Admin</b></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+
+
+
+
+	<!-------------------------------Team Section ------------------------------>
+
+	<section id="team" class="team-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="site-heading text-center">
+						<h2>Our <span>Team</span></h2>
+						<h4>Meet our awesome and expert team members</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row team-items">
+				<div class="col-md-3 single-item">
+					<div class="item">
+						<div class="thumb">
+							<img class="img-fluid" src="../IMG/satyam_img.png" alt="Thumb">
+							<div class="overlay">
+								<h4>Satyam Kumar Jha</h4>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+								</p>
+								<div class="social">
+									<ul>
+										<li class="twitter">
+											<a href="#"><i class="fab fa-twitter"></i></a>
+										</li>
+										<li class="pinterest">
+											<a href="#"><i class="fab fa-facebook"></i></a>
+										</li>
+										<li class="instagram">
+											<a href="#"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li class="vimeo">
+											<a href="#"><i class="fab fa-linkedin"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="info">
+							<span class="message">
+								<a href="#"><i class="fas fa-envelope-open"></i></a>
+							</span>
+							<h4>Satyam Kumar Jha</h4>
+							<span>Project Manager</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 single-item">
+					<div class="item">
+						<div class="thumb">
+							<img class="img-fluid"
+								src="../IMG/WhatsApp_Image_2024-07-18_at_12.45.21_PM-removebg-preview.png" alt="Thumb">
+							<div class="overlay">
+								<h4>Rishi Raj</h4>
+								<p>
+									kING.
+								</p>
+								<div class="social">
+									<ul>
+										<li class="twitter">
+											<a href="#"><i class="fab fa-twitter"></i></a>
+										</li>
+										<li class="pinterest">
+											<a href="#"><i class="fab fa-facebook"></i></a>
+										</li>
+										<li class="instagram">
+											<a href="#"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li class="vimeo">
+											<a href="#"><i class="fab fa-linkedin"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="info">
+							<span class="message">
+								<a href="#"><i class="fas fa-envelope-open"></i></a>
+							</span>
+							<h4>Rishi Raj</h4>
+							<span>App Developer</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 single-item">
+					<div class="item">
+						<div class="thumb">
+							<img class="img-fluid" src="../IMG/1721286072584-removebg-preview.png" alt="Thumb">
+							<div class="overlay">
+								<h4>Avijeet Majhi</h4>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+								</p>
+								<div class="social">
+									<ul>
+										<li class="twitter">
+											<a href="#"><i class="fab fa-twitter"></i></a>
+										</li>
+										<li class="pinterest">
+											<a href="#"><i class="fab fa-facebook"></i></a>
+										</li>
+										<li class="instagram">
+											<a href="#"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li class="vimeo">
+											<a href="#"><i class="fab fa-linkedin"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="info">
+							<span class="message">
+								<a href="#"><i class="fas fa-envelope-open"></i></a>
+							</span>
+							<h4>Avijeet Majhi</h4>
+							<span>Web designer</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 single-item">
+					<div class="item">
+						<div class="thumb">
+							<img class="img-fluid"
+								src="../IMG/WhatsApp_Image_2024-07-18_at_12.45.21_PM__1_-removebg-preview.png"
+								alt="Thumb">
+							<div class="overlay">
+								<h4>Manish Patel</h4>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+								</p>
+								<div class="social">
+									<ul>
+										<li class="twitter">
+											<a href="#"><i class="fab fa-twitter"></i></a>
+										</li>
+										<li class="pinterest">
+											<a href="#"><i class="fab fa-facebook"></i></a>
+										</li>
+										<li class="instagram">
+											<a href="#"><i class="fab fa-instagram"></i></a>
+										</li>
+										<li class="vimeo">
+											<a href="#"><i class="fab fa-linkedin"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="info">
+							<span class="message">
+								<a href="#"><i class="fas fa-envelope-open"></i></a>
+							</span>
+							<h4>Manish Patel</h4>
+							<span>Web designer</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!----------------------foorter section --------------------->
+
+	<footer class="bg-success">
+		<div class="footer-container bg-success">
+			<div class="footer-section" style="text-align: center">
+				<h3>About Us</h3>
+				<p>Learn more about our village management system and its benefits.</p>
+			</div>
+			<div class="footer-section" style="text-align: center">
+				<h3>Contact</h3>
+				<ul>
+					<li>Email: info@smartvillage.com</li>
+					<li>Phone: +123 456 7890</li>
+					<li>Address: 123 Village Road, Smartville</li>
+				</ul>
+			</div>
+			<div class="footer-section" style="text-align: center;">
+				<h3>Quick Links</h3>
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#about">About</a></li>
+				</ul>
+			</div>
+
+
+			<div class="footer-section" style="text-align: center">
+				<h3>Follow Us</h3>
+				<div class="social-links">
+					<a href="#"><img src="../IMG/facebook (1).png" alt="LinkedIn"></a>
+					<a href="#"><img src="../IMG/instagram.png" alt="LinkedIn"></a>
+					<a href="#"><img src="../IMG/linkedin (1).png" alt="LinkedIn"></a>
+					<a href="#"><img src="../IMG/twitter (1).png" alt="LinkedIn"></a>
+				</div>
+			</div>
+		</div>
+
+
+	</footer>
+	<div class="footer-bottom bg-success">
+		<p>&copy; 2024 Smart Village Management System. All rights reserved.</p>
+	</div>
+
+
+
+	<!--------------------------bootstrap cnd link ---------------------------->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
