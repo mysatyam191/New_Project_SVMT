@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .user-info {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .user-info span {
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <h1>User Profile</h1>
+
+    <!-- Welcome message using Thymeleaf security principal -->
+    <h3>Welcome, <span th:text="${#request.userPrincipal.principal.username}"></span>!</h3>
+    
+    
+
+    <div class="button-container">
+        <a href="/editProfile" class="button">Edit Profile</a>
+    </div>
+	<br>
+		<div class="button-container">
+		        <a href="/logout" class="button">Logout</a>
+		    </div>
+</div>
+
+</body>
+</html>

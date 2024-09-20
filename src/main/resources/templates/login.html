@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login Page - Professional Design">
+  <meta name="author" content="YourName">
+  <meta name="keyword" content="Login, Authentication, User, Admin, Responsive">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title>Login Page</title>
+
+  <style>
+    body.login-img3-body {
+        background: #f0f4f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 1rem;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-wrapper {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .alert {
+        display: none;
+    }
+
+    .alert.success {
+        display: block;
+        color: #28a745;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 1rem;
+        border-radius: 0.25rem;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .input-group-prepend {
+        margin-right: -1px;
+    }
+
+    .input-group-text {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        color: #495057;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #ffffff;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+        color: #ffffff;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .btn-info:hover {
+        background-color: #138496;
+        border-color: #117a8b;
+    }
+
+    .forgot-password {
+        color: #007bff;
+    }
+
+    .forgot-password:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .credits a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .credits a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body class="login-img3-body">
+
+  <div class="container">
+    <div class="login-wrapper">
+      <h2 class="text-center">Welcome Back!</h2>
+
+      <form class="login-form" th:action="@{/login}" method="post">
+        <div class="alert success" role="alert" th:if="${message}" th:text="${message}"></div>
+        
+        <div class="form-group">
+          <p class="login-img text-center">
+            <i class="icon_lock_alt"></i>
+          </p>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon_profile"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" name="username" autofocus>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon_key_alt"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password" name="password">
+          </div>
+        </div>
+
+        <div class="form-group d-flex justify-content-between">
+          <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+        <a th:href="@{/register}" class="btn btn-info btn-lg btn-block">Signup</a>
+      </form>
+	  <br>
+	  <a href="/index.html" class="button" style="color: #007bff;">Go to Homepage</a>
+    </div>
+	
+	<div class="button-container">
+		        
+		    </div>
+
+  </div>
+  
+  
+
+  <!-- Bootstrap and Custom JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
